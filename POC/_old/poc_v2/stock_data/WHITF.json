@@ -1,0 +1,1655 @@
+[
+  {
+    "id": "WHITF",
+    "price": 6.550000190734863,
+    "time": {
+      "low": 1498533856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.710801124572754,
+    "dayVolume": {
+      "low": 38744,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.625,
+    "lastSize": {
+      "low": 250,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.570000171661377,
+    "time": {
+      "low": 1498629856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.432056427001953,
+    "dayVolume": {
+      "low": 38844,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6050000190734863,
+    "lastSize": {
+      "low": 100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.599999904632568,
+    "time": {
+      "low": 1498639856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.013941764831543,
+    "dayVolume": {
+      "low": 41744,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.5750002861022949,
+    "lastSize": {
+      "low": 2900,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.599999904632568,
+    "time": {
+      "low": 1498639856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.013941764831543,
+    "change": -0.5750002861022949,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.550000190734863,
+    "time": {
+      "low": 1499307856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.710801124572754,
+    "dayVolume": {
+      "low": 42024,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.625,
+    "lastSize": {
+      "low": 280,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.53000020980835,
+    "time": {
+      "low": 1499536856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.989546775817871,
+    "dayVolume": {
+      "low": 42124,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6449999809265137,
+    "lastSize": {
+      "low": 100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.5,
+    "time": {
+      "low": 1499542856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.407668113708496,
+    "dayVolume": {
+      "low": 42974,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6750001907348633,
+    "lastSize": {
+      "low": 850,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.5,
+    "time": {
+      "low": 1499571856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.407668113708496,
+    "dayVolume": {
+      "low": 43924,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6750001907348633,
+    "lastSize": {
+      "low": 950,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.53000020980835,
+    "time": {
+      "low": 1499674856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.989546775817871,
+    "dayVolume": {
+      "low": 45724,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6449999809265137,
+    "lastSize": {
+      "low": 1800,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.53000020980835,
+    "time": {
+      "low": 1499825856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.989546775817871,
+    "dayVolume": {
+      "low": 47724,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6449999809265137,
+    "lastSize": {
+      "low": 2000,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.514999866485596,
+    "time": {
+      "low": 1499888856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.198610305786133,
+    "dayVolume": {
+      "low": 50224,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6600003242492676,
+    "lastSize": {
+      "low": 2500,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.5,
+    "time": {
+      "low": 1499894856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.407668113708496,
+    "dayVolume": {
+      "low": 51224,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6750001907348633,
+    "lastSize": {
+      "low": 500,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.5,
+    "time": {
+      "low": 1499894856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.40766716003418,
+    "change": -0.6750001907348633,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.505000114440918,
+    "time": {
+      "low": 1500243856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.337979316711426,
+    "dayVolume": {
+      "low": 53224,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6700000762939453,
+    "lastSize": {
+      "low": 2000,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.505000114440918,
+    "time": {
+      "low": 1500396856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.337979316711426,
+    "dayVolume": {
+      "low": 53324,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6700000762939453,
+    "lastSize": {
+      "low": 100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.474999904632568,
+    "time": {
+      "low": 1500892856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.75610065460205,
+    "dayVolume": {
+      "low": 57484,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.7000002861022949,
+    "lastSize": {
+      "low": 1558,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.450099945068359,
+    "time": {
+      "low": 1501308856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -10.10313892364502,
+    "dayVolume": {
+      "low": 62314,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.7249002456665039,
+    "lastSize": {
+      "low": 1000,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.450099945068359,
+    "time": {
+      "low": 1501307856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -10.10313892364502,
+    "change": -0.7249002456665039,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.450099945068359,
+    "time": {
+      "low": 1501307856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -10.10313892364502,
+    "change": -0.7249002456665039,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.5,
+    "time": {
+      "low": 1501417856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.407668113708496,
+    "dayVolume": {
+      "low": 63414,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6750001907348633,
+    "lastSize": {
+      "low": 1100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.5,
+    "time": {
+      "low": 1501471856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.407668113708496,
+    "dayVolume": {
+      "low": 64221,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6750001907348633,
+    "lastSize": {
+      "low": 807,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.510000228881836,
+    "time": {
+      "low": 1502093856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.268292427062988,
+    "dayVolume": {
+      "low": 66421,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6649999618530273,
+    "lastSize": {
+      "low": 1100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1502306856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 67896,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 1475,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1502437856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 68896,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 1000,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1502437856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "change": -0.6400003433227539,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1503415856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 69560,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 589,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1503857856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 70530,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 970,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1503856856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "change": -0.6400003433227539,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1504193856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 73030,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 2500,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1504220856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571432113647461,
+    "dayVolume": {
+      "low": 75003,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6150002479553223,
+    "lastSize": {
+      "low": 1973,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1504455856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 75153,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 150,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1504944856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571432113647461,
+    "dayVolume": {
+      "low": 75753,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6150002479553223,
+    "lastSize": {
+      "low": 600,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1504944856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571431159973145,
+    "change": -0.6150002479553223,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.519999980926514,
+    "time": {
+      "low": 1505392856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.128922462463379,
+    "dayVolume": {
+      "low": 78253,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6550002098083496,
+    "lastSize": {
+      "low": 2500,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1505408856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571432113647461,
+    "dayVolume": {
+      "low": 78353,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6150002479553223,
+    "lastSize": {
+      "low": 100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1505420856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571432113647461,
+    "dayVolume": {
+      "low": 78453,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6150002479553223,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1505431856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571432113647461,
+    "dayVolume": {
+      "low": 78553,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6150002479553223,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1505442856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571432113647461,
+    "dayVolume": {
+      "low": 78653,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6150002479553223,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.559999942779541,
+    "time": {
+      "low": 1505454856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.571432113647461,
+    "dayVolume": {
+      "low": 78753,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6150002479553223,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.570000171661377,
+    "time": {
+      "low": 1505892856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.432056427001953,
+    "dayVolume": {
+      "low": 79003,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6050000190734863,
+    "lastSize": {
+      "low": 250,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.565000057220459,
+    "time": {
+      "low": 1505944856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.50174331665039,
+    "dayVolume": {
+      "low": 79153,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6100001335144043,
+    "lastSize": {
+      "low": 150,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.570000171661377,
+    "time": {
+      "low": 1506468856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.432056427001953,
+    "dayVolume": {
+      "low": 79553,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6050000190734863,
+    "lastSize": {
+      "low": 400,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.569900035858154,
+    "time": {
+      "low": 1506753856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.433451652526855,
+    "dayVolume": {
+      "low": 80003,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.605100154876709,
+    "lastSize": {
+      "low": 450,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.5,
+    "time": {
+      "low": 1506992856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.407668113708496,
+    "dayVolume": {
+      "low": 80103,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6750001907348633,
+    "lastSize": {
+      "low": 100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1507057856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 80253,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 150,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1507532856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 80703,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 450,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1507532856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "change": -0.6400003433227539,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.534999847412109,
+    "time": {
+      "low": 1508542856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.919864654541016,
+    "dayVolume": {
+      "low": 81703,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6400003433227539,
+    "lastSize": {
+      "low": 1000,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.570000171661377,
+    "time": {
+      "low": 1509153856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.432056427001953,
+    "dayVolume": {
+      "low": 82103,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6050000190734863,
+    "lastSize": {
+      "low": 400,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.570000171661377,
+    "time": {
+      "low": 1509153856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.432055473327637,
+    "dayVolume": {
+      "low": 82104,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6050000190734863,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.53000020980835,
+    "time": {
+      "low": 1512273856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.989546775817871,
+    "dayVolume": {
+      "low": 82604,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6449999809265137,
+    "lastSize": {
+      "low": 500,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.554999828338623,
+    "time": {
+      "low": 1514021856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.641119956970215,
+    "dayVolume": {
+      "low": 83346,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6200003623962402,
+    "lastSize": {
+      "low": 720,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.510000228881836,
+    "time": {
+      "low": 1514039856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.268292427062988,
+    "dayVolume": {
+      "low": 83546,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6649999618530273,
+    "lastSize": {
+      "low": 200,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.510000228881836,
+    "time": {
+      "low": 1514039856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -9.268292427062988,
+    "change": -0.6649999618530273,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.570000171661377,
+    "time": {
+      "low": 1515354856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.432056427001953,
+    "dayVolume": {
+      "low": 84546,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6050000190734863,
+    "lastSize": {
+      "low": 1000,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.570000171661377,
+    "time": {
+      "low": 1515363856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.432056427001953,
+    "dayVolume": {
+      "low": 85146,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6050000190734863,
+    "lastSize": {
+      "low": 500,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.539999961853027,
+    "time": {
+      "low": 1515433856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.850177764892578,
+    "dayVolume": {
+      "low": 85446,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6350002288818359,
+    "lastSize": {
+      "low": 300,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.539999961853027,
+    "time": {
+      "low": 1515433856,
+      "high": 389,
+      "unsigned": false
+    },
+    "currency": "USD",
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.850176811218262,
+    "change": -0.6350002288818359,
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.539999961853027,
+    "time": {
+      "low": 1515842856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.850177764892578,
+    "dayVolume": {
+      "low": 85676,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6350002288818359,
+    "lastSize": {
+      "low": 100,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.599899768829346,
+    "time": {
+      "low": 1516302856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.015336990356445,
+    "dayVolume": {
+      "low": 91658,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.5751004219055176,
+    "lastSize": {
+      "low": 5982,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  },
+  {
+    "id": "WHITF",
+    "price": 6.53000020980835,
+    "time": {
+      "low": 1516312856,
+      "high": 389,
+      "unsigned": false
+    },
+    "exchange": "PNK",
+    "quoteType": 8,
+    "marketHours": 1,
+    "changePercent": -8.989546775817871,
+    "dayVolume": {
+      "low": 92158,
+      "high": 0,
+      "unsigned": false
+    },
+    "change": -0.6449999809265137,
+    "lastSize": {
+      "low": 500,
+      "high": 0,
+      "unsigned": false
+    },
+    "priceHint": {
+      "low": 2,
+      "high": 0,
+      "unsigned": false
+    }
+  }
+]

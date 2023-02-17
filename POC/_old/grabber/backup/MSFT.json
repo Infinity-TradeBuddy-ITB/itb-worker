@@ -1,0 +1,40 @@
+[
+	{
+		"id": "MSFT",
+		"price": 236.91000366210938,
+		"time": {
+			"low": 1494301856,
+			"high": 389,
+			"unsigned": false
+		},
+		"exchange": "NMS",
+		"quoteType": 8,
+		"marketHours": 0,
+		"changePercent": -0.021101895719766617,
+		"change": -0.0500030517578125,
+		"priceHint": {
+			"low": 2,
+			"high": 0,
+			"unsigned": false
+		}
+	},
+	{
+		"id": "MSFT",
+		"price": 236.89999389648438,
+		"time": {
+			"low": 1494289856,
+			"high": 389,
+			"unsigned": false
+		},
+		"exchange": "NMS",
+		"quoteType": 8,
+		"marketHours": 0,
+		"changePercent": -0.025326138362288475,
+		"change": -0.0600128173828125,
+		"priceHint": {
+			"low": 2,
+			"high": 0,
+			"unsigned": false
+		}
+	}
+]

@@ -1,0 +1,21 @@
+[
+	{
+		"id": "COIN",
+		"price": 32.63999938964844,
+		"time": {
+			"low": 1493424856,
+			"high": 389,
+			"unsigned": false
+		},
+		"exchange": "NMS",
+		"quoteType": 8,
+		"marketHours": 0,
+		"changePercent": -0.030634412541985512,
+		"change": -0.01000213623046875,
+		"priceHint": {
+			"low": 2,
+			"high": 0,
+			"unsigned": false
+		}
+	}
+]

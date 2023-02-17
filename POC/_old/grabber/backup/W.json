@@ -1,0 +1,21 @@
+[
+	{
+		"id": "W",
+		"price": 32.02000045776367,
+		"time": {
+			"low": 1494053856,
+			"high": 389,
+			"unsigned": false
+		},
+		"exchange": "NYQ",
+		"quoteType": 8,
+		"marketHours": 0,
+		"changePercent": -0.4043578803539276,
+		"change": -0.13000106811523438,
+		"priceHint": {
+			"low": 2,
+			"high": 0,
+			"unsigned": false
+		}
+	}
+]

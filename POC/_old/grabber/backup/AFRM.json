@@ -1,0 +1,21 @@
+[
+	{
+		"id": "AFRM",
+		"price": 8.850000381469727,
+		"time": {
+			"low": 1493795856,
+			"high": 389,
+			"unsigned": false
+		},
+		"exchange": "NMS",
+		"quoteType": 8,
+		"marketHours": 0,
+		"changePercent": -0.6733946800231934,
+		"change": -0.05999946594238281,
+		"priceHint": {
+			"low": 2,
+			"high": 0,
+			"unsigned": false
+		}
+	}
+]

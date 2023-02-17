@@ -1,0 +1,21 @@
+[
+	{
+		"id": "TWLO",
+		"price": 44.31999969482422,
+		"time": {
+			"low": 1494290856,
+			"high": 389,
+			"unsigned": false
+		},
+		"exchange": "NYQ",
+		"quoteType": 8,
+		"marketHours": 0,
+		"changePercent": -0.6055179834365845,
+		"change": -0.2700004577636719,
+		"priceHint": {
+			"low": 2,
+			"high": 0,
+			"unsigned": false
+		}
+	}
+]

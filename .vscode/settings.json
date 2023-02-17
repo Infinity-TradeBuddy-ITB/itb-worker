@@ -1,0 +1,6 @@
+{
+	"code-runner.executorMap": {
+		"javascript": "cls && pnpm start"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
+}
