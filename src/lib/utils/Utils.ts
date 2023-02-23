@@ -1,7 +1,7 @@
 import fs from 'fs';
 import * as path from 'path';
 import protobuf from 'protobufjs';
-import { Fluctuations, Stock } from '../models/stock.js';
+import { Fluctuations, Stock } from '../models/Stock.js';
 
 const date = new Date();
 export const dateString = date.toLocaleDateString('pt-BR', {

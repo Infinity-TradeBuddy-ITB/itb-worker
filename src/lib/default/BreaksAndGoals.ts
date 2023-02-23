@@ -1,6 +1,6 @@
-import { log } from '../log/log_lib.js';
-import { Stock } from '../models/stock.js';
-import { endTransaction as end, stops } from '../utils/lib_utils.js';
+import { log } from '../log/LogLib.js';
+import { Stock } from '../models/Stock.js';
+import { endTransaction as end, stops } from '../utils/Utils.js';
 
 export const goalsNotHolding = (stock: Stock, closeConnection: Function) => {
   // 0.6 de lucro

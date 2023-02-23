@@ -1,17 +1,18 @@
 import * as dotenv from 'dotenv';
 import fs from 'fs';
-import mongoose from 'mongoose';
-import os from 'os';
+import { newSubscribedStockEvent, StockEvent, StockEventType, StockTicker, SubscribedStocksEvent } from './../models/StockTickers';
+
 import * as path from 'path';
 import WebSocket from 'ws';
 
-import { blocked, firstStopLoss } from '../default/blocks_lib.js';
-import { breaks, goalsHolding, goalsNotHolding } from '../default/breaks_and_goals_lib.js';
-import { processing } from '../default/core_lib_v3.js';
-import { log } from '../log/log_lib.js';
-import { Stock } from '../models/stock.js';
-import YPriceDataModel, { YPriceData } from '../models/yprice_data.js';
-import { buildFilePath, connectionString, returnYaticker } from '../utils/lib_utils.js';
+import { blocked, firstStopLoss } from '../default/Blocks.js';
+import { breaks, goalsHolding, goalsNotHolding } from '../default/BreaksAndGoals.js';
+import { processing } from '../default/Core.v3.js';
+import { log } from '../log/LogLib.js';
+import { Stock } from '../models/Stock.js';
+import YPriceDataModel, { YPriceData } from '../models/YPriceData.js';
+import { connectToMongo } from '../mongo/MongoConnection.js';
+import { buildFilePath, returnYaticker } from '../utils/Utils.js';
 
 const config = {
 	ignoreStockMarkedAsNotWorking: true
@@ -22,6 +23,8 @@ export type StockWorkingState = {
 	working: boolean;
 }
 
+const subscribedStockEvents: SubscribedStocksEvent = newSubscribedStockEvent();
+
 export const clusterBehavior = async (clusterIndex: string | undefined, isTest: boolean) => {
 	// ******************** mongoose connection
 	dotenv.config();
@@ -29,52 +32,41 @@ export const clusterBehavior = async (clusterIndex: string | undefined, isTest: 
 
 	// ******************** opening connections logic
 	const ws = connectToSocket(false);
+	const server = openServer();
+
 	onOpen(ws, clusterIndex, isTest);
 	log('server started');
 
 	// ******************** operation on message logic
-	onMessage(ws, isTest);
+	onMessage(ws, server, isTest);
+	onFrontMessage(server);
 
 	// ******************** closing connection logic 
 	ws.onclose = () => {
 		log('disconnected');
 		ws.terminate();
-	};	
-}
-
-// ******************** mongoose connection
-const connectToMongo = async () => {
-	await mongoose.connect(connectionString, {
-		dbName: process.env.MONGODB_DBNAME,
-		user: process.env.MONGODB_USERNAME,
-		pass: process.env.MONGODB_PASSWORD
-	});
-	const connection = mongoose.connection;
-
-	connection.on('connected', () => {
-		console.log('MongoDB connected successfully');
-	});
-	connection.on('error', (error) => {
-		console.error(`\n\n\n\t MongoDB connection error: ${error}\n\n\n\t`);
-		process.exit(0);
-	});
+	};
 }
 
 // ******************** opening connections logic
 const connectToSocket = (isTest: boolean) => {
-	if(isTest){
-		return new WebSocket('ws://127.0.0.1:5500');
-	} else { 
+	if (isTest) {
+		return new WebSocket('ws://127.0.0.1:5501');
+	} else {
 		return new WebSocket('wss://streamer.finance.yahoo.com');
 	}
+}
+
+const openServer = () => {
+	return new WebSocket.Server({ port: 5500 });
 }
 
 const onOpen = (ws: WebSocket, clusterIndex: string | undefined, isTest: boolean,) => {
 	if (isTest) {
 		ws.onopen = () => {
 			log(`\n\n\t\tconneceted to test server\n\n`)
-		}; 	
-	} else { 
+		};
+	} else {
 		ws.onopen = () => {
 
 			if (clusterIndex == undefined) {
@@ -96,20 +88,20 @@ const onOpen = (ws: WebSocket, clusterIndex: string | undefined, isTest: boolean
 			log('Files created');
 
 			ws.send(
-			  JSON.stringify({
-			    subscribe: [...file.stocks],
-			  })
+				JSON.stringify({
+					subscribe: [...file.stocks],
+				})
 			);
 			log(`Worker ${process.pid} subscribed`);
-		}; 	
+		};
 	}
 }
 
 // ******************** operation on message logic
-const onMessage = (ws: WebSocket, isTest: boolean) => {
+const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => {
 	const Yaticker = returnYaticker();
 	const stocks: StockWorkingState[] = [];
-	
+
 	ws.onmessage = (data: any) => {
 		log('comming message');
 
@@ -120,8 +112,11 @@ const onMessage = (ws: WebSocket, isTest: boolean) => {
 			const message = Yaticker.decode(Buffer.from(data.data, 'base64'));
 			rawYPriceData = Yaticker.toObject(message) as YPriceData;
 		}
-
 		YPriceDataModel.logYPriceData(rawYPriceData);
+
+		if (searchSymbol(<StockTicker>rawYPriceData.id)) {
+			sendToFrontend(rawYPriceData, server);
+		}
 
 		const found = stocks.find((o) => o.stock.stockName === rawYPriceData.id);
 		if (!found) {
@@ -152,7 +147,7 @@ const onMessage = (ws: WebSocket, isTest: boolean) => {
 
 	const removeStock = (stockName: string | undefined) => {
 		const workingStock = stocks.find(stock => stock.stock.stockName === stockName);
-	
+
 		if (workingStock) {
 			Stock.logStock(workingStock.stock);
 			workingStock.working = false;
@@ -161,3 +156,35 @@ const onMessage = (ws: WebSocket, isTest: boolean) => {
 	}
 }
 
+const onFrontMessage = (ws: WebSocket.Server) => {
+	ws.on(`ypriceEvent`, (stockEvent: StockEvent | any) => {
+		if (!('event' in stockEvent)) {
+			return log('not a stock event');
+
+		} else if (stockEvent.event === StockEventType.SUBSCRIBE) {
+			subscribeStockEvent(stockEvent.symbol);
+
+		} else if (stockEvent.event === StockEventType.UNSUBSCRIBE) {
+			unsubscribeStockEvent(stockEvent.symbol);
+		}
+	});
+}
+
+const sendToFrontend = (data: YPriceData, ws: WebSocket.Server) => {
+	ws.on(`send`, async (socket: WebSocket) => {
+		log('comming message');
+		socket.send(JSON.stringify(data));
+	});
+}
+
+const unsubscribeStockEvent = (stockName: StockTicker) => {
+	subscribedStockEvents.symbols = subscribedStockEvents.symbols.filter(symbol => symbol !== stockName);
+}
+
+const subscribeStockEvent = (stockName: StockTicker) => {
+	subscribedStockEvents.symbols.push(stockName);
+}
+
+const searchSymbol = (stockName: StockTicker | undefined) => {
+	return subscribedStockEvents.symbols.find(symbol => symbol === stockName) != undefined;
+}

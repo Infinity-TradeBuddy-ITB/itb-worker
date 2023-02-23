@@ -1,5 +1,5 @@
-import { log } from '../log/log_lib.js';
-import { Stock } from '../models/stock.js';
+import { log } from '../log/LogLib.js';
+import { Stock } from '../models/Stock.js';
 import { reduce } from '../utils/lib_utils.js';
 
 export const sell = (stock: Stock, currFluct: number) => {

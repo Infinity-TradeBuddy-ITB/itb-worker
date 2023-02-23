@@ -29,7 +29,7 @@ ws.onopen = open = () => {
         'AFRM',
         'COIN',
         'TWLO',
-        'M',
+        'M', 
       ],
     })
   );
