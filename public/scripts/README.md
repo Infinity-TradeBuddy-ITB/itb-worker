@@ -1,4 +1,4 @@
-# Descricao do Script Lua
+# Descrição  do Script Lua
 
 ## O código Lua fornecido inclui vários indicadores e regras para determinar sinais de compra e venda:
 
