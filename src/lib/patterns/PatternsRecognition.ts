@@ -121,25 +121,29 @@ export const tripleTopPattern = (orderedFlucts: OrderedFlucts[]): PatternRespons
 		detected: wedgeCheck(flucts, false) ? PatternDetected.YES : PatternDetected.NO
 	};
 }
-
+  
 // Falling
 export const uptrendRisingWedgePattern = (orderedFlucts: OrderedFlucts[]): PatternResponse => {
 	const flucts = extractFlucts(orderedFlucts);
+	const wedgeFlag = wedgeCheck(flucts, true);
+	const confirmedFlag = flucts[1] < flucts[-1];
 
 	return <PatternResponse>{
 		pattern: Pattern.UPTREND_RISING_WEDGE,
-		detected: false ? PatternDetected.YES : PatternDetected.NO
+		detected: wedgeFlag && confirmedFlag ? PatternDetected.YES : PatternDetected.NO
 	};
 }
 
 // Falling
 export const downtrendRisingWedgePattern = (orderedFlucts: OrderedFlucts[]): PatternResponse => {
 	const flucts = extractFlucts(orderedFlucts);
+	const wedgeFlag = wedgeCheck(flucts, true);
+	const confirmedFlag = flucts[1] < flucts[-1];
 
 
 	return <PatternResponse>{
 		pattern: Pattern.DOWNTREND_RISING_WEDGE,
-		detected: false ? PatternDetected.YES : PatternDetected.NO
+		detected: wedgeFlag && confirmedFlag ? PatternDetected.YES : PatternDetected.NO
 	};
 }
 
@@ -189,26 +193,36 @@ export const tripleBottomPattern = (orderedFlucts: OrderedFlucts[]): PatternResp
 
 // Rising
 export const uptrendFallingWedge = (orderedFlucts: OrderedFlucts[]): PatternResponse => {
-	const detected = false;
+	const flucts = extractFlucts(orderedFlucts);
+	const wedgeFlag = wedgeCheck(flucts, true);
+	const confirmedFlag = flucts[1] > flucts[-1];
 
 
 	return <PatternResponse>{
 		pattern: Pattern.UPTREND_FALLING_WEDGE,
-		detected: detected ? PatternDetected.YES : PatternDetected.NO
+		detected: wedgeFlag && confirmedFlag ? PatternDetected.YES : PatternDetected.NO
 	};
 }
 
 // Rising
 export const downtrendFallingWedge = (orderedFlucts: OrderedFlucts[]): PatternResponse => {
-	const detected = false;
-
+	const flucts = extractFlucts(orderedFlucts);
+	const wedgeFlag = wedgeCheck(flucts, true);
+	const confirmedFlag = flucts[1] > flucts[-1];
 
 	return <PatternResponse>{
 		pattern: Pattern.DOWNTREND_FALLING_WEDGE,
-		detected: detected ? PatternDetected.YES : PatternDetected.NO
+		detected: wedgeFlag && confirmedFlag ? PatternDetected.YES : PatternDetected.NO
 	};
 }
 
-/*********																									*********/
+
+/*********																										*********/
 /***********************		 end of rising		************************/
+/*********     																     					*********/
+
+/********************************************************************** */
+
+/*********																										*********/
+/***********************				 TODO 				************************/
 /*********     																     					*********/
