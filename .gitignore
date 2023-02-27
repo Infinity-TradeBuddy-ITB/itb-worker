@@ -15,10 +15,10 @@
 # vendor/
 /node_modules
 /dist
-/public
+/public/stocks/*
 /.VSCodeCounter/**
 /.idea
-
+.vscode
 # NPM/Yarn lock files
 yarn.lock
 yarn-error.log

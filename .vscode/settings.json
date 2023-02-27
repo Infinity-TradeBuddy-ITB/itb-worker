@@ -2,5 +2,8 @@
 	"code-runner.executorMap": {
 		"javascript": "cls && pnpm start"
 	},
-	"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[lua]": {
+		"editor.defaultFormatter": "yinfei.luahelper"
+	}
 }
