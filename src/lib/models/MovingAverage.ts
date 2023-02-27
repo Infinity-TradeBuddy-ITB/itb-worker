@@ -19,6 +19,10 @@ class MovingAverage {
   buyFlag: boolean = false;
   @prop()
   sellFlag: boolean = false;
+  @prop()
+  sealing: number = 0;
+  @prop()
+  floor: number = 0;
 
   public static newInstance(slowWindow: number, fastWindow: number) {
     const movingAverage = new MovingAverage();
@@ -29,7 +33,7 @@ class MovingAverage {
 
   public static reloadInstance(prevMovingAverage: MovingAverage) {
     const currMovingAverage = new MovingAverage();
-    
+
     currMovingAverage.data = prevMovingAverage.data;
     currMovingAverage.slowWindow = prevMovingAverage.slowWindow;
     currMovingAverage.fastWindow = prevMovingAverage.fastWindow;
@@ -39,6 +43,8 @@ class MovingAverage {
     currMovingAverage.prevFastAverage = prevMovingAverage.prevFastAverage;
     currMovingAverage.buyFlag = prevMovingAverage.buyFlag;
     currMovingAverage.sellFlag = prevMovingAverage.sellFlag;
+    currMovingAverage.sealing = prevMovingAverage.sealing;
+    currMovingAverage.floor = prevMovingAverage.floor;
     return currMovingAverage;
   }
 
@@ -66,19 +72,36 @@ class MovingAverage {
     this.prevFastAverage = this.fastAverage;
     this.fastAverage = fastSum / this.data.length;
 
-    // Set buy and sell flags based on crossover of slow and fast moving averages
-    if (this.prevFastAverage < this.prevSlowAverage && this.fastAverage >= this.slowAverage) {
+    const percentOffset = 0.02; // 2% offset from current price
+    if (this.buySignal(value)) {
       this.buyFlag = true;
       this.sellFlag = false;
-    } else if (this.prevFastAverage > this.prevSlowAverage && this.fastAverage <= this.slowAverage) {
+      this.setFloorAndSealing(value, percentOffset)
+
+    } else if (this.sellSignal(value)) {
       this.buyFlag = false;
       this.sellFlag = true;
+      this.setFloorAndSealing(value, percentOffset)
+      
     } else {
       this.buyFlag = false;
       this.sellFlag = false;
     }
   }
 
+  sellSignal(value: number): boolean {
+    return this.prevFastAverage > this.prevSlowAverage && this.fastAverage <= this.slowAverage && value >= this.floor;
+  }
+
+  buySignal(value: number) {
+    return this.prevFastAverage < this.prevSlowAverage && this.fastAverage >= this.slowAverage && value <= this.sealing;
+  }
+
+  setFloorAndSealing(value: number, percentOffset: number) {
+    this.sealing = value * (1 + percentOffset);
+    this.floor = value * (1 - percentOffset);
+  }
+  
   getSlowMovingAverage(): number {
     return this.slowAverage;
   }
@@ -96,9 +119,9 @@ class MovingAverage {
   }
 
   public static async logMovingAverage(movingAverage: MovingAverage) {
-		const MovingAverageModel = getModelForClass(MovingAverage);
-		await MovingAverageModel.create(movingAverage);
-	}
+    const MovingAverageModel = getModelForClass(MovingAverage);
+    await MovingAverageModel.create(movingAverage);
+  }
 }
 
 export default getModelForClass(MovingAverage);
