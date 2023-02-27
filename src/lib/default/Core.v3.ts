@@ -1,7 +1,4 @@
-import { log } from '../log/LogLib.js';
-import { Stock } from '../models/Stock.js';
-import { applyB3CostToStockPrice } from '../utils/Utils.js';
-import { buy, changeStopLoss, sell } from './DefaultBehavior.v3.js';
+import { applyB3CostToStockPrice, buy, changeStopLoss, log, sell, Stock } from '../index.lib.js';
 
 export const processing = (stock: Stock, currFluct: number, closeConnection: Function) => {
   //-- compra

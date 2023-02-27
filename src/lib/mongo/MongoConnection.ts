@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { connectionString } from '../utils/Utils.js';
+import { connectionString } from '../index.lib.js';
 
 // ******************** mongoose connection
 export const connectToMongo = async () => {

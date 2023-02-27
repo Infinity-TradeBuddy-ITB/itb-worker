@@ -1,7 +1,4 @@
-import { log } from '../log/LogLib.js';
-import { Stock } from '../models/Stock.js';
-import { rapidFalling, reduce, rising } from '../utils/Utils.js';
-
+import { log, rapidFalling, reduce, rising, Stock } from '../index.lib.js';
 
 export const blocked = (stock: Stock, currFluct: number) => {
 

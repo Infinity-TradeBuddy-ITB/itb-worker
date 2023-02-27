@@ -1,8 +1,7 @@
 import fs from 'fs';
 import { deprecate } from 'util';
 
-import { Stock } from '../models/Stock.js';
-import { dailyResultsDir, dateString, errorsDir } from '../utils/lib_utils.js';
+import { dailyResultsDir, dateString, errorsDir, Stock } from '../index.lib.js';
 
 [deprecate(
   (stock: Stock, logContent: string) => {

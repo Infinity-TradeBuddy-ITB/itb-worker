@@ -21,7 +21,7 @@ async function main() {
     });
 
   } else {
-    const { clusterBehavior } = await import('./lib/clusters/ClusterBehavior.js');
+    const { clusterBehavior } = await import('./lib/index.lib.js');
     clusterBehavior(process.env.clusterIndex, process.argv[2] === 'test' ? true : false);
   }
 }

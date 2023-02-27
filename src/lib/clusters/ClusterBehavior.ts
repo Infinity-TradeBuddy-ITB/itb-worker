@@ -1,18 +1,16 @@
 import * as dotenv from 'dotenv';
 import fs from 'fs';
-import { newSubscribedStockEvent, StockEvent, StockEventType, StockTicker, SubscribedStocksEvent } from './../models/StockTickers';
-
 import * as path from 'path';
 import WebSocket from 'ws';
 
-import { blocked, firstStopLoss } from '../default/Blocks.js';
-import { breaks, goalsHolding, goalsNotHolding } from '../default/BreaksAndGoals.js';
-import { processing } from '../default/Core.v3.js';
-import { log } from '../log/LogLib.js';
-import { Stock } from '../models/Stock.js';
-import YPriceDataModel, { YPriceData } from '../models/YPriceData.js';
-import { connectToMongo } from '../mongo/MongoConnection.js';
-import { buildFilePath, returnYaticker } from '../utils/Utils.js';
+import { 
+	blocked, breaks, buildFilePath, connectToMongo, firstStopLoss, 
+	goalsHolding, goalsNotHolding, log, newSubscribedStockEvent, 
+	processing, returnYaticker, Stock, StockEvent, StockEventType, 
+	StockTicker, SubscribedStocksEvent, YPriceData
+} from '../index.lib.js';
+
+import YPriceDataModel from '../models/YPriceData.js';
 
 const config = {
 	ignoreStockMarkedAsNotWorking: true

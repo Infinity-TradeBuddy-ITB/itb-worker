@@ -1,4 +1,4 @@
-import { OrderedFlucts, Pattern, PatternDetected, PatternResponse } from '../models/Patterns.js';
+import { OrderedFlucts, Pattern, PatternDetected, PatternResponse } from '../index.lib.js';
 
 /************************		helpers		************************/
 
