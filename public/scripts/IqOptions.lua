@@ -59,10 +59,13 @@ input_group {
         type = input.line_width
     }
 }
+
 h = set_high()
 l = set_low()
+
 hline(h, "High", color, high_width)
 hline(l, "Low", color, width)
+
 hline(highest(10)[1], "HH10", color, 1)
 hline(lowest(10)[1], "LL10", color, 1)
 hline(highest(30)[1], "HH30", color, 1)
