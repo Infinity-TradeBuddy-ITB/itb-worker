@@ -1,4 +1,4 @@
-import { log, rapidFalling, reduce, rising, Stock } from '../index.lib.js';
+import { log, rapidFalling, reduce, rising, Stock } from '../';
 
 export const blocked = (stock: Stock, currFluct: number) => {
 

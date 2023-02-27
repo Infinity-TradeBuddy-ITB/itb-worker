@@ -1,7 +1,7 @@
 import cluster from 'cluster';
 import os from 'os';
 
-import { log } from './lib/log/LogLib.js';
+import { log } from './lib';
 
 const numCPUs = os.cpus().length;
 
@@ -21,7 +21,7 @@ async function main() {
     });
 
   } else {
-    const { clusterBehavior } = await import('./lib/index.lib.js');
+    const { clusterBehavior } = await import('./lib/index.js');
     clusterBehavior(process.env.clusterIndex, process.argv[2] === 'test' ? true : false);
   }
 }

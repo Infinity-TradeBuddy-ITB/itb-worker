@@ -1,4 +1,4 @@
-import { log, reduce, Stock } from '../index.lib.js';
+import { log, reduce, Stock } from '../';
 
 export const sell = (stock: Stock, currFluct: number) => {
   stock.tradeCount++;

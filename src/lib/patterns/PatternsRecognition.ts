@@ -1,4 +1,4 @@
-import { OrderedFlucts, Pattern, PatternDetected, PatternResponse } from '../index.lib.js';
+import { OrderedFlucts, Pattern, PatternDetected, PatternResponse } from '../';
 
 /************************		helpers		************************/
 
@@ -121,7 +121,7 @@ export const tripleTopPattern = (orderedFlucts: OrderedFlucts[]): PatternRespons
 		detected: wedgeCheck(flucts, false) ? PatternDetected.YES : PatternDetected.NO
 	};
 }
-  
+
 // Falling
 export const uptrendRisingWedgePattern = (orderedFlucts: OrderedFlucts[]): PatternResponse => {
 	const flucts = extractFlucts(orderedFlucts);

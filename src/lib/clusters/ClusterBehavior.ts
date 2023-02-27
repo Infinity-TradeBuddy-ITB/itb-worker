@@ -3,15 +3,15 @@ import fs from 'fs';
 import * as path from 'path';
 import WebSocket from 'ws';
 
-import { 
-	blocked, breaks, buildFilePath, connectToMongo, firstStopLoss, 
-	goalsHolding, goalsNotHolding, log, newSubscribedStockEvent, 
-	processing, returnYaticker, Stock, StockEvent, StockEventType, 
+import {
+	blocked, breaks, buildFilePath, connectToMongo, firstStopLoss,
+	goalsHolding, goalsNotHolding, log, newSubscribedStockEvent,
+	processing, returnYaticker, Stock, StockEvent, StockEventType,
 	StockTicker, SubscribedStocksEvent, YPriceData
-} from '../index.lib.js';
+} from '../';
 
 import YPriceDataModel from '../models/YPriceData.js';
-
+	
 const config = {
 	ignoreStockMarkedAsNotWorking: true
 }
