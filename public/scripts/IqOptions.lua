@@ -4,27 +4,50 @@ instrument {
     overlay = true
 }
 
-local function a()
-    local b = make_series()
-    local c = high[2]
+local function set_high() -- high
+    local do_series = make_series()
+    local second_high = high[2]
 
     if not get_value(c) then
-        return b
+        return do_series
     end
-    local d = high <= c and high[1] <= c and high[3] <= c and high[4] <= c;
-    b:set(iff(d, c, b[1]))
-    return b
+
+    local d = ( 
+        (high <= second_high) and 
+        (high[1] <= second_high) and 
+        (high[3] <= second_high) and 
+        (high[4] <= second_high)
+    );
+    
+    do_series:set(
+        iff(d, second_high, do_series[1])
+    )
+
+    return do_series
 end
-local function e()
-    local b = make_series()
-    local c = low[2]
-    if not get_value(c) then
-        return b
+
+local function set_low() -- low
+    local do_series = make_series()
+    local second_low = low[2]
+
+    if not get_value(second_low) then
+        return do_series
     end
-    local d = low >= c and low[1] >= c and low[3] >= c and low[4] >= c;
-    b:set(iff(d, c, b[1]))
-    return b
+
+    local d = ( 
+        (low >= second_low) and 
+        (low[1] >= second_low) and 
+        (low[3] >= second_low) and 
+        (low[4] >= second_low)
+    );
+
+    do_series:set(
+        iff(d, second_low, do_series[1])
+    )
+    
+    return do_series
 end
+
 input_group {
     "Color",
     color = input {
@@ -36,8 +59,8 @@ input_group {
         type = input.line_width
     }
 }
-h = a()
-l = e()
+h = set_high()
+l = set_low()
 hline(h, "High", color, high_width)
 hline(l, "Low", color, width)
 hline(highest(10)[1], "HH10", color, 1)
@@ -108,19 +131,55 @@ buffer1 = smaFast - smaSlow
 
 buffer2 = wma(buffer1, Signal_period)
 
-buyCondition = conditional(buffer1 > buffer2 and buffer1[1] < buffer2[1] and
-                               not (buffer1 < buffer2 and buffer1[1] > buffer2[1]))
-buyCondition = conditional(buffer1 > buffer2 and buffer1[1] < buffer2[1])
+buyCondition = conditional (
+    (buffer1 > buffer2) and 
+    (buffer1[1] < buffer2[1]) and not 
+    (
+        (buffer1 < buffer2) and 
+        (buffer1[1] > buffer2[1])
+    )
+)
+buyCondition = conditional (
+    (buffer1 > buffer2) and 
+    (buffer1[1] < buffer2[1])
+)
 
-sellCondition = conditional(buffer1 < buffer2 and buffer1[1] > buffer2[1] and
-                                not (buffer1 > buffer2 and buffer1[1] < buffer2[1]))
-sellCondition = conditional(buffer1 < buffer2 and buffer1[1] > buffer2[1])
+sellCondition = conditional (
+    (buffer1 < buffer2) and 
+    (buffer1[1] > buffer2[1]) and not 
+    (
+        (buffer1 > buffer2) and 
+        (buffer1[1] < buffer2[1])
+    )
+)
+sellCondition = conditional (
+    (buffer1 < buffer2) and 
+    (buffer1[1] > buffer2[1])
+)
 
-plot_shape((buyCondition), "COMPRA AGORA!", shape_style.triangleup, shape_size.huge, colorBuy, shape_location.belowbar,
-    -1, "COMPRA AGORA!", "white")
+plot_shape (
+    (buyCondition), 
+    "COMPRA AGORA!", 
+    shape_style.triangleup, 
+    shape_size.huge, 
+    colorBuy, 
+    shape_location.belowbar,
+    -1, 
+    "COMPRA AGORA!", 
+    "white"
+)
 
-plot_shape((sellCondition), "VENDA AGORA!", shape_style.triangledown, shape_size.huge, colorSell,
-    shape_location.abovebar, -1, "VENDA AGORA!", "white")
+plot_shape (
+    (sellCondition), 
+    "VENDA AGORA!", 
+    shape_style.triangledown, 
+    shape_size.huge, 
+    colorSell,
+    shape_location.abovebar, 
+    -1, 
+    "VENDA AGORA!", 
+    "white"
+)
 
 input_group {
     "Maxima",
@@ -148,9 +207,12 @@ local function m15(candle)
     c1 = candle.high
     c2 = candle.low
 end
+
 local methods = {m15}
 local resolution = "15m"
+
 sec = security(current_ticker_id, resolution)
+
 if sec then
     local method = methods[method_id]
     method(sec)
