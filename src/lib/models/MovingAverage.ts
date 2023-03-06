@@ -1,6 +1,7 @@
+import { MovingAverageClass as MovingAverageInterface } from 'itb-types';
 import { getModelForClass, prop } from '@typegoose/typegoose';
 
-class MovingAverage {
+export class MovingAverage implements MovingAverageInterface {
   @prop()
   data: number[] = [];
   @prop()

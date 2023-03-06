@@ -23,12 +23,15 @@
     "email": "fernando.ribeiro.olle@gmail.com"
   },
   "dependencies": {
+    "@total-typescript/ts-reset": "^0.3.7",
     "@typegoose/typegoose": "^10.1.1",
     "dotenv": "^16.0.3",
+    "itb-types": "github:Infinity-TradeBuddy-ITB/itb-types#master",
     "mongoose": "~6.9.0",
     "protobufjs": "^7.1.2",
     "socket.io": "^4.5.4",
-    "ws": "^8.12.0"
+    "ws": "^8.12.0",
+    "zod": "^3.21.2"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

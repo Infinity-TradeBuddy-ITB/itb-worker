@@ -6,8 +6,6 @@ export * from './models';
 
 export * from './default';
 
-export * from './models/Patterns.js';
-
 export * from './mongo/MongoConnection.js';
 
 export * from './patterns/PatternsRecognition.js';

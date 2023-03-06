@@ -1,4 +1,4 @@
-import { OrderedFlucts, Pattern, PatternDetected, PatternResponse } from '../';
+import { OrderedFlucts, Pattern, PatternDetected, PatternResponse } from 'itb-types';
 
 /************************		helpers		************************/
 

@@ -1,13 +1,13 @@
+import { applyB3CostToStockPrice } from './../utils/Utils';
 import * as dotenv from 'dotenv';
 import fs from 'fs';
+import { newSubscribedStockEvent, StockEvent, StockEventType, StockTicker, SubscribedStocksEvent } from 'itb-types';
 import * as path from 'path';
 import WebSocket from 'ws';
 
 import {
-	blocked, breaks, buildFilePath, connectToMongo, firstStopLoss,
-	goalsHolding, goalsNotHolding, log, newSubscribedStockEvent,
-	processing, returnYaticker, Stock, StockEvent, StockEventType,
-	StockTicker, SubscribedStocksEvent, YPriceData
+	blocked, buildFilePath, connectToMongo, firstStopLoss, YPriceData,
+	BreaksAndGoals, log,	processing, returnYaticker, Stock
 } from '../';
 
 import YPriceDataModel from '../models/YPriceData.js';
@@ -126,22 +126,29 @@ const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => 
 			if (currStock != undefined) {
 				currStock.currFluct = rawYPriceData.price ?? 0;
 
-				if (currStock.reasonable && currStock.prevFluct != currStock.currFluct && currStock.currFluct > 0) {
-					log(`currStock is reasonable\n\n`);
-					!firstStopLoss(currStock, removeStock) &&
-						!goalsHolding(currStock, currStock.currFluct, removeStock) &&
-						!goalsNotHolding(currStock, removeStock) &&
-						!processing(currStock, currStock.currFluct, removeStock) &&
-						breaks(currStock, removeStock);
-				} else {
-					blocked(currStock, currStock.currFluct)
-				}
+				validateAndOperate(currStock);
+				
 				currStock.prevFluct = currStock.currFluct;
 				currStock.index++;
 			}
 		}
 		log(`${found?.stock.founds}`);
 	};
+
+	const validateAndOperate = (currStock: Stock) => {
+		if (currStock.reasonable && 
+				currStock.prevFluct < applyB3CostToStockPrice(currStock.currFluct) + 0.1 && 
+				currStock.currFluct > 0) 
+		{
+			log(`currStock is reasonable\n\n`);
+
+			if(!firstStopLoss(currStock, removeStock))
+				if(!BreaksAndGoals(currStock, removeStock))
+					processing(currStock, removeStock);
+		} else {
+			blocked(currStock, currStock.currFluct)
+		}
+	}
 
 	const removeStock = (stockName: string | undefined) => {
 		const workingStock = stocks.find(stock => stock.stock.stockName === stockName);
