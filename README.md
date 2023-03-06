@@ -22,7 +22,7 @@
 
 ## comando para acessar o container 
 - `$ docker exec -it mongodb mongo -u admin -p secret`
--`$ docker exec -it mongodb mongo -u root -p toor --authenticationDatabase=itb_db`
+- `$ docker exec -it mongodb mongo -u root -p toor --authenticationDatabase=itb_db`
 
 ## comando para parar o container 
 - `$ docker stop mongodb`

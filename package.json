@@ -3,7 +3,7 @@
   "description": "POC for trade bot",
   "version": "0.0.3",
   "main": "index.js",
-  "license": "SEE LICENSE IN trade_budy.license",
+  "license": "see license in LICENSE",
   "private": true,
   "keywords": [
     "POC",
