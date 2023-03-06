@@ -7,7 +7,7 @@ import WebSocket from 'ws';
 
 import {
 	blocked, buildFilePath, connectToMongo, firstStopLoss, YPriceData,
-	BreaksAndGoals, log,	processing, returnYaticker, Stock
+	BreaksAndGoals, log,	processing, returnYaticker, Stock 
 } from '../';
 
 import YPriceDataModel from '../models/YPriceData.js';
