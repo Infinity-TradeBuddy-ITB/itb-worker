@@ -1,23 +1,10 @@
 import { getModelForClass, prop } from '@typegoose/typegoose';
+import { BuysAndSells, Fluctuations, Stock as StockInterface } from 'itb-types';
 
 const currentDate = new Date();
 currentDate.setHours(17, 55, 0, 0);
 
-export interface BuysAndSells {
-	type: string;
-	index: number;
-	currPrice: number;
-	timeStamp: Date;
-}
-
-export interface Fluctuations {
-	type: string;
-	index: number;
-	currPrice: number;
-	timeStamp: Date;
-}
-
-export class Stock {
+export class Stock implements StockInterface {
 
 	// today at 5:55pm
 	@prop()
@@ -101,7 +88,7 @@ export class Stock {
 
 	public static newInstance(stockName: string | undefined, openValue: number | undefined, startFounds: number | undefined): Stock {
 		const stock = new Stock();
-		stock.breakPoint = currentDate; 
+		stock.breakPoint = currentDate;
 		stock.stockName = stockName ?? '';
 		stock.startFounds = startFounds === null || startFounds === undefined ? 100000 : startFounds;
 		stock.founds = startFounds === null || startFounds === undefined ? 100000 : startFounds;

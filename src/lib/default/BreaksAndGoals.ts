@@ -11,10 +11,7 @@ export const goalsNotHolding = (stock: Stock, closeConnection: Function) => {
     stock.exited = true;
     closeConnection(stock.stockName);
     return true;
-  }
-
-  // 0.5 de lucro
-  if (!stock.holding && stock.currFounds >= stock.startFounds * 1.005 && !stock.exited) {
+  } /* 0.5 de lucro */ else if (!stock.holding && stock.currFounds >= stock.startFounds * 1.005 && !stock.exited) {
     stock.buysAndSells.push({ type: 'v_c_s_2', index: stock.index, currPrice: stock.currFluct, timeStamp: new Date() });
     log(`vendeu bem rapidamente (1.005), sem segurar na flutação de n° 
 					${stock.index} entre ${stock.total} no dia ${new Date()}, ${stock.currFounds} em ${stock.stockName}`);
@@ -27,25 +24,25 @@ export const goalsNotHolding = (stock: Stock, closeConnection: Function) => {
   return false;
 };
 
-export const goalsHolding = (stock: Stock, currFluct: number, closeConnection: Function) => {
+export const goalsHolding = (stock: Stock, closeConnection: Function) => {
   // 0.4 de lucro
   if (stock.holding && stock.currFounds >= stock.startFounds * 1.004) {
-    stock.buysAndSells.push({ type: 'vv_c_c', index: stock.index, currPrice: currFluct, timeStamp: new Date() });
+    stock.buysAndSells.push({ type: 'vv_c_c', index: stock.index, currPrice: stock.currFluct, timeStamp: new Date() });
     log(`vendeu bem rapidamente (1.004), segurando na flutação de n° 
 					${stock.index} entre ${stock.total} no dia ${new Date()}, ${stock.currFounds} em ${stock.stockName}`);
     // venda
-    stock = end(stock, currFluct);
+    stock = end(stock, stock.currFluct);
     closeConnection(stock.stockName);
     return true;
   }
 
   // 0.3 de lucro
   if (stock.holding && stock.currFounds >= stock.startFounds * 1.003) {
-    stock.buysAndSells.push({ type: 'vv_c_c_2', index: stock.index, currPrice: currFluct, timeStamp: new Date() });
+    stock.buysAndSells.push({ type: 'vv_c_c_2', index: stock.index, currPrice: stock.currFluct, timeStamp: new Date() });
     log(`vendeu bem rapidamente (1.003), segurando na flutação de n° 
 	  			${stock.index} entre ${stock.total} no dia ${new Date()}, ${stock.currFounds} em ${stock.stockName}`);
     // venda
-    stock = end(stock, currFluct);
+    stock = end(stock, stock.currFluct);
     closeConnection(stock.stockName);
     return true;
   }
@@ -108,3 +105,15 @@ export const breaks = (stock: Stock, closeConnection: Function) => {
   }
   return false;
 };
+
+export const BreaksAndGoals = (stock: Stock, closeConnection: Function) => {
+  if (goalsNotHolding(stock, closeConnection)) {
+    return true;
+  }
+
+  if (!goalsHolding(stock, closeConnection)) {
+    return breaks(stock, closeConnection);
+  } else {
+    return true;
+  }
+}
