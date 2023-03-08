@@ -1,5 +1,5 @@
-import { MovingAverageClass as MovingAverageInterface } from 'itb-types';
 import { getModelForClass, prop } from '@typegoose/typegoose';
+import { MovingAverageClass as MovingAverageInterface } from 'itb-types';
 
 export class MovingAverage implements MovingAverageInterface {
   @prop()
@@ -83,7 +83,7 @@ export class MovingAverage implements MovingAverageInterface {
       this.buyFlag = false;
       this.sellFlag = true;
       this.setFloorAndSealing(value, percentOffset)
-      
+
     } else {
       this.buyFlag = false;
       this.sellFlag = false;
@@ -102,7 +102,7 @@ export class MovingAverage implements MovingAverageInterface {
     this.sealing = value * (1 + percentOffset);
     this.floor = value * (1 - percentOffset);
   }
-  
+
   getSlowMovingAverage(): number {
     return this.slowAverage;
   }

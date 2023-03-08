@@ -1,5 +1,5 @@
 import { getModelForClass, prop } from '@typegoose/typegoose';
-import { QuoteType, OptionType, MarketHoursType, YPriceData as YPriceDataInterface } from 'itb-types';
+import { MarketHoursType, OptionType, QuoteType, YPriceData as YPriceDataInterface } from 'itb-types';
 
 export class YPriceData implements YPriceDataInterface {
   @prop()

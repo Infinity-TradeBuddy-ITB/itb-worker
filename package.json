@@ -42,7 +42,7 @@
   },
   "scripts": {
     "start": "tsc -p tsconfig.json && node dist/src/index.js",
-    "pull-types": "add github:Infinity-TradeBuddy-ITB/itb-types#master",
+    "pull-types": "pnpm add github:Infinity-TradeBuddy-ITB/itb-types#master",
     "test_multi": "tsc -p tsconfig.json && node dist/src/tests/index.mult.test.js",
     "test_single": "tsc -p tsconfig.json && node dist/src/tests/index.single.test.js"
   },

@@ -1,17 +1,16 @@
-import { applyB3CostToStockPrice } from './../utils/Utils';
 import * as dotenv from 'dotenv';
 import fs from 'fs';
-import { newSubscribedStockEvent, StockEvent, StockEventType, StockTicker, SubscribedStocksEvent } from 'itb-types';
+import { StockEvent, StockEventType, StockTicker } from 'itb-types';
 import * as path from 'path';
 import WebSocket from 'ws';
+import { applyB3CostToStockPrice } from './../utils/Utils';
 
 import {
-	blocked, buildFilePath, connectToMongo, firstStopLoss, YPriceData,
-	BreaksAndGoals, log,	processing, returnYaticker, Stock 
+	blocked, BreaksAndGoals, buildFilePath, connectToMongo, firstStopLoss, log, processing, returnYaticker, Stock, YPriceData
 } from '../';
 
 import YPriceDataModel from '../models/YPriceData.js';
-	
+
 const config = {
 	ignoreStockMarkedAsNotWorking: true
 }
@@ -21,7 +20,7 @@ export type StockWorkingState = {
 	working: boolean;
 }
 
-const subscribedStockEvents: SubscribedStocksEvent = newSubscribedStockEvent();
+// const subscribedStockEvents: SubscribedStocksEvent = newSubscribedStockEvent();
 
 export const clusterBehavior = async (clusterIndex: string | undefined, isTest: boolean) => {
 	// ******************** mongoose connection
@@ -37,7 +36,7 @@ export const clusterBehavior = async (clusterIndex: string | undefined, isTest: 
 
 	// ******************** operation on message logic
 	onMessage(ws, server, isTest);
-	onFrontMessage(server);
+	// onFrontMessage(server);
 
 	// ******************** closing connection logic 
 	ws.onclose = () => {
@@ -112,9 +111,9 @@ const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => 
 		}
 		YPriceDataModel.logYPriceData(rawYPriceData);
 
-		if (searchSymbol(<StockTicker>rawYPriceData.id)) {
-			sendToFrontend(rawYPriceData, server);
-		}
+		// if (searchSymbol(<StockTicker>rawYPriceData.id)) {
+		// 	sendToFrontend(rawYPriceData, server);
+		// }
 
 		const found = stocks.find((o) => o.stock.stockName === rawYPriceData.id);
 		if (!found) {
@@ -127,7 +126,7 @@ const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => 
 				currStock.currFluct = rawYPriceData.price ?? 0;
 
 				validateAndOperate(currStock);
-				
+
 				currStock.prevFluct = currStock.currFluct;
 				currStock.index++;
 			}
@@ -136,14 +135,13 @@ const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => 
 	};
 
 	const validateAndOperate = (currStock: Stock) => {
-		if (currStock.reasonable && 
-				currStock.prevFluct < applyB3CostToStockPrice(currStock.currFluct) + 0.1 && 
-				currStock.currFluct > 0) 
-		{
+		if (currStock.reasonable &&
+			currStock.prevFluct < applyB3CostToStockPrice(currStock.currFluct) + 0.1 &&
+			currStock.currFluct > 0) {
 			log(`currStock is reasonable\n\n`);
 
-			if(!firstStopLoss(currStock, removeStock))
-				if(!BreaksAndGoals(currStock, removeStock))
+			if (!firstStopLoss(currStock, removeStock))
+				if (!BreaksAndGoals(currStock, removeStock))
 					processing(currStock, removeStock);
 		} else {
 			blocked(currStock, currStock.currFluct)
@@ -161,35 +159,37 @@ const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => 
 	}
 }
 
-const onFrontMessage = (ws: WebSocket.Server) => {
-	ws.on(`ypriceEvent`, (stockEvent: StockEvent | any) => {
-		if (!('event' in stockEvent)) {
-			return log('not a stock event');
+// const onFrontMessage = (ws: WebSocket.Server) => {
+// 	ws.on(`ypriceEvent`, (stockEvent: StockEvent | any) => {
+// 		if (!('event' in stockEvent)) {
+// 			return log('not a stock event');
 
-		} else if (stockEvent.event === StockEventType.SUBSCRIBE) {
-			subscribeStockEvent(stockEvent.symbol);
+// 		} else if (stockEvent.event === StockEventType.SUBSCRIBE) {
+// 			subscribeStockEvent(stockEvent.symbol);
 
-		} else if (stockEvent.event === StockEventType.UNSUBSCRIBE) {
-			unsubscribeStockEvent(stockEvent.symbol);
-		}
-	});
-}
+// 		} else if (stockEvent.event === StockEventType.UNSUBSCRIBE) {
+// 			unsubscribeStockEvent(stockEvent.symbol);
+// 		}
+// 	});
+// }
 
-const sendToFrontend = (data: YPriceData, ws: WebSocket.Server) => {
-	ws.on(`send`, async (socket: WebSocket) => {
-		log('comming message');
-		socket.send(JSON.stringify(data));
-	});
-}
+// const sendToFrontend = (data: YPriceData, ws: WebSocket.Server) => {
+// 	ws.on(`send`, async (socket: WebSocket) => {
+// 		log('comming message');
+// 		socket.send(JSON.stringify(data));
+// 	});
+// }
 
-const unsubscribeStockEvent = (stockName: StockTicker) => {
-	subscribedStockEvents.symbols = subscribedStockEvents.symbols.filter(symbol => symbol !== stockName);
-}
+// const unsubscribeStockEvent = (stockName: StockTicker) => {
+// 	subscribedStockEvents.symbols = subscribedStockEvents.symbols.filter(symbol => symbol !== stockName);
+// }
 
-const subscribeStockEvent = (stockName: StockTicker) => {
-	subscribedStockEvents.symbols.push(stockName);
-}
+// const subscribeStockEvent = (stockName: StockTicker) => {
+// 	subscribedStockEvents.symbols.push(stockName);
+// }
 
-const searchSymbol = (stockName: StockTicker | undefined) => {
-	return subscribedStockEvents.symbols.find(symbol => symbol === stockName) != undefined;
-}
+// const searchSymbol = (stockName: StockTicker | undefined) => {
+// 	return subscribedStockEvents.symbols.find(symbol => symbol === stockName) != undefined;
+// }
+
+// export const newSubscribedStockEvent 
