@@ -106,4 +106,4 @@ export class Stock implements StockInterface {
 	}
 }
 
-export default getModelForClass(Stock);
+export const StockModel = getModelForClass(Stock);

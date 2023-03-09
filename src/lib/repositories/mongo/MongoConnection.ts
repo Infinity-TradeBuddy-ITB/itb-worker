@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { connectionString } from '@utils/index';
+import { connectionString } from '@utils';
 
 // ******************** mongoose connection
 export const connectToMongo = async () => {

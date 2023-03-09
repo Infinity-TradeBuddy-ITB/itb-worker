@@ -38,12 +38,14 @@
     "@types/ws": "^8.5.4",
     "prettier": "^2.8.2",
     "sucrase": "^3.29.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.2",
     "typescript": "^4.9.4"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "start": "node dist/src/index.js",
-    "build-run": "tsc -p tsconfig.json && node dist/src/index.js",
+    "start": "tsc -p tsconfig.json && node dist/src/index.js",
+    "run-dev": "npx ts-node-dev -r tsconfig-paths/register ./src/index",
     "pull-types": "pnpm add github:Infinity-TradeBuddy-ITB/itb-types#master",
     "test_multi": "tsc -p tsconfig.json && node dist/src/tests/index.mult.test.js",
     "test_single": "tsc -p tsconfig.json && node dist/src/tests/index.single.test.js"

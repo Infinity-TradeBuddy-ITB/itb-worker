@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 
-import { connectToSocket, openServer, onOpen, onMessage } from '@services';
 import { connectToMongo, Stock } from '@repositories';
+import { connectToSocket, onFrontMessage, onMessage, onOpen, openServer } from '@services';
 import { log } from '@utils';
 
 const config = {

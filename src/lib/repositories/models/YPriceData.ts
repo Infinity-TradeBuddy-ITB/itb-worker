@@ -107,4 +107,4 @@ export class YPriceData implements YPriceDataInterface {
   }
 }
 
-export default getModelForClass(YPriceData);
+export const YPriceDataModel = getModelForClass(YPriceData);

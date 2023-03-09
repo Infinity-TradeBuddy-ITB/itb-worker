@@ -3,8 +3,7 @@ import { StockTicker } from 'itb-types';
 import * as path from 'path';
 import WebSocket from 'ws';
 
-import { Stock, YPriceData } from '@repositories';
-import YPriceDataModel from '@repositories/models/YPriceData';
+import { Stock, YPriceData, YPriceDataModel } from '@repositories';
 import { blocked, BreaksAndGoals, firstStopLoss, processing, searchSymbol, sendToFrontend } from '@services';
 import { applyB3CostToStockPrice, buildFilePath, log, returnYaticker } from '@utils';
 

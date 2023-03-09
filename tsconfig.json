@@ -16,10 +16,19 @@
     "noEmit": true,
     "outDir": "dist",
     "rootDir": "./",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@*": [
-        "src/lib/*"
+      "@controllers": [
+        "./src/lib/controllers/index"
+      ],
+      "@repositories": [
+        "./src/lib/repositories/index"
+      ],
+      "@services": [
+        "./src/lib/services/index"
+      ],
+      "@utils": [
+        "./src/lib/utils/index"
       ]
     },
     "sourceMap": true,
