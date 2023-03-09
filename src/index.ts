@@ -21,7 +21,7 @@ async function main() {
     });
 
   } else {
-    const { clusterBehavior } = await import('@controllers/index.js');
+    const { clusterBehavior } = await import('@controllers');
     clusterBehavior(process.env.clusterIndex, process.argv[2] === 'test' ? true : false);
   }
 }

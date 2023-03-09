@@ -1,4 +1,4 @@
-export * from './log/LogLib.js';
-export * from './Utils.js';
+export * from './log/LogLib';
+export * from './Utils';
 
 
