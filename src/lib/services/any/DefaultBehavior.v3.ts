@@ -1,4 +1,5 @@
-import { log, reduce, Stock } from '../';
+import { log, reduce } from '@utils';
+import { Stock } from '@repositories';
 
 export const sell = (stock: Stock, currFluct: number) => {
   stock.tradeCount++;

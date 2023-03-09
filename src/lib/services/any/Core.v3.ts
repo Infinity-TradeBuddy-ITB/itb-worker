@@ -1,4 +1,6 @@
-import { applyB3CostToStockPrice, buy, changeStopLoss, log, sell, Stock } from '../';
+import { applyB3CostToStockPrice, log } from '@utils';
+import { buy, changeStopLoss, sell } from '@services';
+import { Stock } from '@repositories';
 
 export const processing = (stock: Stock, closeConnection: Function) => {
   /* compra */ if (stock.holding && stock.holds.length > 0) {

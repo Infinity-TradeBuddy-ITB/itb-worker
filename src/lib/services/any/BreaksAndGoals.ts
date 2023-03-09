@@ -1,4 +1,5 @@
-import { endTransaction as end, log, Stock, stops } from '../';
+import { endTransaction as end, log, stops } from '@utils';
+import { Stock } from '@repositories';
 
 export const goalsNotHolding = (stock: Stock, closeConnection: Function) => {
   // 0.6 de lucro

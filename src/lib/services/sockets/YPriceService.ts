@@ -1,15 +1,12 @@
-import * as dotenv from 'dotenv';
 import fs from 'fs';
-import { StockEvent, StockEventType, StockTicker } from 'itb-types';
+import { StockTicker } from 'itb-types';
 import * as path from 'path';
 import WebSocket from 'ws';
-import { applyB3CostToStockPrice } from './../utils/Utils';
 
-import {
-	blocked, BreaksAndGoals, buildFilePath, connectToMongo, firstStopLoss, log, processing, returnYaticker, Stock, YPriceData
-} from '../';
-
-import YPriceDataModel from '../models/YPriceData.js';
+import { Stock, YPriceData } from '@repositories';
+import YPriceDataModel from '@repositories/models/YPriceData';
+import { blocked, BreaksAndGoals, firstStopLoss, processing, searchSymbol, sendToFrontend } from '@services';
+import { applyB3CostToStockPrice, buildFilePath, log, returnYaticker } from '@utils';
 
 const config = {
 	ignoreStockMarkedAsNotWorking: true
@@ -20,33 +17,7 @@ export type StockWorkingState = {
 	working: boolean;
 }
 
-// const subscribedStockEvents: SubscribedStocksEvent = newSubscribedStockEvent();
-
-export const clusterBehavior = async (clusterIndex: string | undefined, isTest: boolean) => {
-	// ******************** mongoose connection
-	dotenv.config();
-	connectToMongo();
-
-	// ******************** opening connections logic
-	const ws = connectToSocket(false);
-	const server = openServer();
-
-	onOpen(ws, clusterIndex, isTest);
-	log('server started');
-
-	// ******************** operation on message logic
-	onMessage(ws, server, isTest);
-	// onFrontMessage(server);
-
-	// ******************** closing connection logic 
-	ws.onclose = () => {
-		log('disconnected');
-		ws.terminate();
-	};
-}
-
-// ******************** opening connections logic
-const connectToSocket = (isTest: boolean) => {
+export const connectToSocket = (isTest: boolean) => {
 	if (isTest) {
 		return new WebSocket('ws://127.0.0.1:5501');
 	} else {
@@ -54,11 +25,7 @@ const connectToSocket = (isTest: boolean) => {
 	}
 }
 
-const openServer = () => {
-	return new WebSocket.Server({ port: 5500 });
-}
-
-const onOpen = (ws: WebSocket, clusterIndex: string | undefined, isTest: boolean,) => {
+export const onOpen = (ws: WebSocket, clusterIndex: string | undefined, isTest: boolean,) => {
 	if (isTest) {
 		ws.onopen = () => {
 			log(`\n\n\t\tconneceted to test server\n\n`)
@@ -94,8 +61,7 @@ const onOpen = (ws: WebSocket, clusterIndex: string | undefined, isTest: boolean
 	}
 }
 
-// ******************** operation on message logic
-const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => {
+export const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => {
 	const Yaticker = returnYaticker();
 	const stocks: StockWorkingState[] = [];
 
@@ -111,9 +77,9 @@ const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => 
 		}
 		YPriceDataModel.logYPriceData(rawYPriceData);
 
-		// if (searchSymbol(<StockTicker>rawYPriceData.id)) {
-		// 	sendToFrontend(rawYPriceData, server);
-		// }
+		if (searchSymbol(<StockTicker>rawYPriceData.id)) {
+			sendToFrontend(rawYPriceData, server);
+		}
 
 		const found = stocks.find((o) => o.stock.stockName === rawYPriceData.id);
 		if (!found) {
@@ -158,38 +124,3 @@ const onMessage = (ws: WebSocket, server: WebSocket.Server, isTest: boolean) => 
 		}
 	}
 }
-
-// const onFrontMessage = (ws: WebSocket.Server) => {
-// 	ws.on(`ypriceEvent`, (stockEvent: StockEvent | any) => {
-// 		if (!('event' in stockEvent)) {
-// 			return log('not a stock event');
-
-// 		} else if (stockEvent.event === StockEventType.SUBSCRIBE) {
-// 			subscribeStockEvent(stockEvent.symbol);
-
-// 		} else if (stockEvent.event === StockEventType.UNSUBSCRIBE) {
-// 			unsubscribeStockEvent(stockEvent.symbol);
-// 		}
-// 	});
-// }
-
-// const sendToFrontend = (data: YPriceData, ws: WebSocket.Server) => {
-// 	ws.on(`send`, async (socket: WebSocket) => {
-// 		log('comming message');
-// 		socket.send(JSON.stringify(data));
-// 	});
-// }
-
-// const unsubscribeStockEvent = (stockName: StockTicker) => {
-// 	subscribedStockEvents.symbols = subscribedStockEvents.symbols.filter(symbol => symbol !== stockName);
-// }
-
-// const subscribeStockEvent = (stockName: StockTicker) => {
-// 	subscribedStockEvents.symbols.push(stockName);
-// }
-
-// const searchSymbol = (stockName: StockTicker | undefined) => {
-// 	return subscribedStockEvents.symbols.find(symbol => symbol === stockName) != undefined;
-// }
-
-// export const newSubscribedStockEvent 

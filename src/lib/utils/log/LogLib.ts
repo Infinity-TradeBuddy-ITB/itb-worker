@@ -1,7 +1,8 @@
 import fs from 'fs';
 import { deprecate } from 'util';
 
-import { dailyResultsDir, dateString, errorsDir, Stock } from '../';
+import { Stock } from '@repositories';
+import { dailyResultsDir, dateString, errorsDir } from '@utils';
 
 [deprecate(
   (stock: Stock, logContent: string) => {

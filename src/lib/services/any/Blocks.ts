@@ -1,4 +1,5 @@
-import { log, rapidFalling, reduce, rising, Stock } from '../';
+import { log, rapidFalling, reduce, rising } from '@utils';
+import { Stock } from '@repositories';
 
 export const blocked = (stock: Stock, currFluct: number) => {
 

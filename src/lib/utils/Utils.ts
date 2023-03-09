@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { Fluctuations, Stock } from 'itb-types';
+import { Fluctuations, Stock, StockEventType, StockTicker, SubscribedStocksEvent } from 'itb-types';
 import * as path from 'path';
 import protobuf from 'protobufjs';
 
@@ -124,3 +124,11 @@ export const applyB3CostToStock = (stock: Stock) => {
 export const applyB3CostToStockPrice = (currFluct: number) => {
   return currFluct - (currFluct * 0.00023);
 };
+
+export const newSubscribedStockEvent = (): SubscribedStocksEvent => {
+  const symbols: StockTicker[] = [];
+  return <SubscribedStocksEvent>{
+    event: StockEventType.SUBSCRIBE,
+    symbols: symbols
+  };
+}
