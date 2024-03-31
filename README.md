@@ -30,5 +30,6 @@
 ## comando para iniciar o container
 - `$ docker start mongodb`
 
+# Notas
 
-# [https://www.vectorstock.com/royalty-free-vectors/pattern-formation-vector-image-vectors-by_bestforbest] (Trading Patterns)
+## Padrões de operações implementados: [Trading Patterns](https://www.vectorstock.com/royalty-free-vectors/pattern-formation-vector-image-vectors-by_bestforbest)
